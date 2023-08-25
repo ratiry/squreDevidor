@@ -26,14 +26,11 @@ let makeBigSquare=(obj)=>{
     if(Object.keys(obj).length==0){
         return 1
     }
-    if(Object.keys(obj).length>1){
-        for(let i=0;i<Object.keys(obj).length;i++){
-            square*=Object.keys(obj)[i]**Object.values(obj)[i];
-        }
-        return square
-    }else{
-        return Number(Object.keys(obj)[0])**Object.values(obj)[0]
+    for(let i=0;i<Object.keys(obj).length;i++){
+        square*=Object.keys(obj)[i]**Object.values(obj)[i];
     }
-}
-let squares=makeBigSquare(findSquares(90));
+    return square
+    }
+
+let squares=makeBigSquare(findSquares(900));
 console.log(squares)
